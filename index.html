@@ -298,7 +298,7 @@
           <source src="media/ogre-demo.mov" type="video/quicktime" />
           Your browser doesn't support embedded video — <a href="media/ogre-demo.mp4">download the clip</a>.
         </video>
-        <span class="demo-cap">Live capture: the local 14B agent ingesting work items, OGrE weaving 5D-connascence edges, and the Lorenz GC evicting → resurrecting from the FIFO log.</span>
+        <span class="demo-cap">Narrated live capture (~2.5&nbsp;min): the local 14B agent ingesting work items, OGrE weaving 5D-connascence edges, and the Lorenz GC evicting → forgetting → resurrecting from the FIFO log. On-screen subtitles walk through each phase.</span>
         <p>Work items are ingested by a <strong>local Ollama agent</strong> (qwen2.5-coder 14B, GPU-tiered to fit 12&nbsp;GB VRAM) that enriches each into concepts and importance. <em>Opportunistic Graph enrichment</em> (OGrE) weaves them together with <strong>5D-connascence edges</strong> — structural, conceptual, temporal, co-occurrence, and co-variance. Vitality decays over time but <strong>propagates along edges</strong>, so densely re-referenced clusters reinforce each other into stable attractors.</p>
         <p>A <strong>Lorenz-attractor garbage collector</strong> (built on my <span class="mono">provenance-engine</span> package) maps every node into the chaotic system and classifies it by which wing its trajectory settles into — <strong>KEEP / REVIEW / EVICT</strong>. Evictions fall into a 100-item <strong>FIFO log</strong>; an agent searching the past walks the live graph first, then the log, and <strong>resurrects</strong> anything still referenced. The whole lifecycle renders live and records straight to video.</p>
         <div class="tags">
