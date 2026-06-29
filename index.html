@@ -110,6 +110,11 @@
   .body p{margin:0 0 14px;color:#cdd6e6}
   .body p:last-of-type{margin-bottom:18px}
   .body .highlight{color:var(--text)}
+  .demo{
+    display:block;width:100%;margin:0 0 16px;border-radius:12px;
+    border:1px solid var(--border);background:#000;box-shadow:var(--shadow)
+  }
+  .demo-cap{display:block;color:var(--muted);font-size:.82rem;margin:-6px 0 16px}
   .tags{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 18px}
   .tag{
     font-size:.78rem;color:var(--muted);background:var(--panel-2);
@@ -190,7 +195,11 @@
           <span class="tag">FastAPI</span><span class="tag">PostgreSQL · pgvector</span><span class="tag">React / TypeScript</span><span class="tag">React Native</span><span class="tag">Hybrid RAG</span><span class="tag">Knowledge Graph</span><span class="tag">HIPAA-forward</span>
         </div>
         <div class="links">
-          <a class="btn primary" href="https://github.com/dmccapes4/2ndOpinionMD" target="_blank" rel="noopener">
+          <a class="btn primary" href="https://2ndopinionmd.ai" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18"/></svg>
+            Visit 2ndopinionmd.ai
+          </a>
+          <a class="btn" href="https://github.com/dmccapes4/2ndOpinionMD" target="_blank" rel="noopener">
             <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.58 2 12.26c0 4.5 2.87 8.32 6.84 9.67.5.1.68-.22.68-.49 0-.24-.01-.87-.01-1.71-2.78.62-3.37-1.2-3.37-1.2-.46-1.18-1.11-1.5-1.11-1.5-.91-.64.07-.62.07-.62 1 .07 1.53 1.06 1.53 1.06.89 1.56 2.34 1.11 2.91.85.09-.66.35-1.11.63-1.36-2.22-.26-4.55-1.14-4.55-5.07 0-1.12.39-2.03 1.03-2.75-.1-.26-.45-1.3.1-2.7 0 0 .84-.27 2.75 1.05a9.36 9.36 0 0 1 5 0c1.91-1.32 2.75-1.05 2.75-1.05.55 1.4.2 2.44.1 2.7.64.72 1.03 1.63 1.03 2.75 0 3.94-2.34 4.81-4.57 5.06.36.32.68.94.68 1.9 0 1.37-.01 2.47-.01 2.81 0 .27.18.6.69.49A10.02 10.02 0 0 0 22 12.26C22 6.58 17.52 2 12 2Z"/></svg>
             View on GitHub
           </a>
@@ -284,6 +293,12 @@
       </summary>
       <div class="body">
         <p class="highlight">What should a system remember, and what should it let go? OGrE answers with the geometry of chaos — a real-time <strong>PyGame</strong> simulation of a knowledge graph that grows, decays, forgets, and resurrects.</p>
+        <video class="demo" controls muted loop playsinline preload="metadata" poster="media/ogre-demo-poster.jpg">
+          <source src="media/ogre-demo.mp4" type="video/mp4" />
+          <source src="media/ogre-demo.mov" type="video/quicktime" />
+          Your browser doesn't support embedded video — <a href="media/ogre-demo.mp4">download the clip</a>.
+        </video>
+        <span class="demo-cap">Live capture: the local 14B agent ingesting work items, OGrE weaving 5D-connascence edges, and the Lorenz GC evicting → resurrecting from the FIFO log.</span>
         <p>Work items are ingested by a <strong>local Ollama agent</strong> (qwen2.5-coder 14B, GPU-tiered to fit 12&nbsp;GB VRAM) that enriches each into concepts and importance. <em>Opportunistic Graph enrichment</em> (OGrE) weaves them together with <strong>5D-connascence edges</strong> — structural, conceptual, temporal, co-occurrence, and co-variance. Vitality decays over time but <strong>propagates along edges</strong>, so densely re-referenced clusters reinforce each other into stable attractors.</p>
         <p>A <strong>Lorenz-attractor garbage collector</strong> (built on my <span class="mono">provenance-engine</span> package) maps every node into the chaotic system and classifies it by which wing its trajectory settles into — <strong>KEEP / REVIEW / EVICT</strong>. Evictions fall into a 100-item <strong>FIFO log</strong>; an agent searching the past walks the live graph first, then the log, and <strong>resurrects</strong> anything still referenced. The whole lifecycle renders live and records straight to video.</p>
         <div class="tags">
