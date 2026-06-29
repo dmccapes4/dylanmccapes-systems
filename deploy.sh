@@ -21,6 +21,13 @@ echo "▸ Publishing ${ROOT}/index.html → /var/www/index.html"
 install -d /var/www
 install -m 644 "${ROOT}/index.html" /var/www/index.html
 
+for page in reflection-feynman.html; do
+  if [[ -f "${ROOT}/${page}" ]]; then
+    echo "▸ Publishing ${ROOT}/${page} → /var/www/${page}"
+    install -m 644 "${ROOT}/${page}" "/var/www/${page}"
+  fi
+done
+
 if [[ -d "${ROOT}/media" ]]; then
   echo "▸ Publishing ${ROOT}/media → /var/www/media"
   install -d /var/www/media

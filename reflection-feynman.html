@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>The Feynman Lens — OGrE · Dylan McCapes</title>
+<meta name="description" content="A reflection on the OGrE 5D-connascence graph mechanics, read against the values and methods of Richard Feynman." />
+<style>
+  :root{
+    --bg:#0b0e14;--bg-soft:#0f1320;--panel:#131a2a;--panel-2:#172132;
+    --border:#243048;--text:#e7ecf5;--muted:#9aa7bd;--accent:#5eead4;--accent-2:#7c9cff;
+    --shadow:0 10px 30px rgba(0,0,0,.35);--radius:16px;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    margin:0;
+    background:
+      radial-gradient(1200px 600px at 80% -10%, rgba(124,156,255,.12), transparent 60%),
+      radial-gradient(900px 500px at -10% 10%, rgba(94,234,212,.10), transparent 55%),
+      var(--bg);
+    color:var(--text);
+    font-family:ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    line-height:1.7;-webkit-font-smoothing:antialiased;
+  }
+  .wrap{max-width:760px;margin:0 auto;padding:40px 22px 96px}
+  .back{
+    display:inline-flex;align-items:center;gap:8px;text-decoration:none;color:var(--accent-2);
+    font-size:.9rem;font-weight:600;margin-bottom:26px
+  }
+  .back:hover{text-decoration:underline}
+  .back svg{width:16px;height:16px}
+  .eyebrow{
+    font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+    color:var(--accent);font-size:.78rem;letter-spacing:.16em;text-transform:uppercase;margin:0 0 12px
+  }
+  h1{font-size:clamp(1.9rem,4.6vw,2.7rem);line-height:1.08;margin:0 0 14px;letter-spacing:-.02em;font-weight:800}
+  .dek{color:var(--muted);font-size:1.05rem;margin:0 0 10px;max-width:62ch}
+  .meta{color:var(--muted);font-size:.82rem;font-style:italic;margin:0 0 8px}
+  .rule{height:1px;background:var(--border);border:0;margin:30px 0}
+  article h2{
+    font-size:1.28rem;margin:42px 0 12px;letter-spacing:-.01em;
+    padding-top:6px
+  }
+  article h2 .num{color:var(--accent);font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:.9rem;margin-right:8px}
+  article p{margin:0 0 16px;color:#cdd6e6}
+  article strong{color:var(--text);font-weight:600}
+  article em{color:var(--text)}
+  blockquote{
+    margin:20px 0;padding:14px 20px;border-left:3px solid var(--accent);
+    background:linear-gradient(90deg,rgba(94,234,212,.08),transparent);
+    border-radius:0 10px 10px 0;color:var(--text);font-size:1.02rem
+  }
+  blockquote cite{display:block;margin-top:8px;color:var(--muted);font-size:.84rem;font-style:normal}
+  pre{
+    background:#0a0d15;border:1px solid var(--border);border-radius:12px;
+    padding:16px 18px;overflow-x:auto;margin:0 0 18px;box-shadow:var(--shadow)
+  }
+  pre code{
+    font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:.92rem;
+    color:#bfe9e0;line-height:1.6;white-space:pre
+  }
+  code.inl{
+    font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:.86em;
+    background:var(--panel-2);border:1px solid var(--border);border-radius:6px;padding:1px 6px;color:#bfe9e0
+  }
+  article ul,article ol{margin:0 0 18px;padding-left:22px;color:#cdd6e6}
+  article li{margin:0 0 10px}
+  article li strong{color:var(--text)}
+  .coda{color:var(--muted);font-style:italic;font-size:.92rem;margin-top:8px}
+  footer{margin-top:60px;padding-top:22px;border-top:1px solid var(--border);color:var(--muted);font-size:.86rem;display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px}
+  footer a{color:var(--accent-2);text-decoration:none}
+  footer a:hover{text-decoration:underline}
+  .mono{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace}
+  @media (max-width:520px){.wrap{padding:28px 16px 72px}}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <a class="back" href="index.html">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m15 18-6-6 6-6"/></svg>
+    Back to projects
+  </a>
+
+  <p class="eyebrow">Reflection · OGrE</p>
+  <h1>The Feynman Lens</h1>
+  <p class="dek">5D-connascence graph mechanics, read against the values and methods of Richard Feynman — and the question: would he have liked the material?</p>
+  <p class="meta">A reflection on the OGrE work-intelligence system.</p>
+
+  <hr class="rule" />
+
+  <article>
+
+    <h2>A note on scope and honesty</h2>
+    <p>Before anything else, the Feynman move: <strong>don't fool yourself, and don't let the reader be fooled either.</strong></p>
+    <p>This reflection is written from a deliberately bounded vantage point — it assesses <em>one artifact</em>: OGrE, a runnable system in which work items are ingested by a local model, wired together by five-dimensional connascence edges, kept alive by a decay-and-propagation field, and garbage-collected by a Lorenz attractor. It is not a verdict on a body of academic work it cannot see. It is a reading of the thing in front of it, against the values Feynman actually practiced.</p>
+    <p>That limitation is the right place to start — because the first thing Feynman taught was about the limits of one's own knowledge:</p>
+    <blockquote>"The first principle is that you must not fool yourself — and you are the easiest person to fool."<cite>— Cargo Cult Science, Caltech commencement, 1974</cite></blockquote>
+    <p>So what follows is partly admiration and partly cross-examination. Feynman showed respect to ideas by attacking them. Treating this work as worth attacking is the compliment.</p>
+
+    <h2><span class="num">1</span>"What I cannot create, I do not understand"</h2>
+    <p>When Feynman died in 1988, that sentence was on his blackboard. It is, almost exactly, the design philosophy of OGrE.</p>
+    <p>OGrE does not <em>claim</em> that a memory system could decide what to keep by the geometry of a chaotic attractor. It <strong>builds the thing and runs it</strong> — ingestion, enrichment, decay, classification, eviction, forgetting, resurrection — and then makes it <em>render itself</em>, so the claim can be inspected frame by frame.</p>
+    <p>This is the Feynman instinct in its purest form. He distrusted understanding that couldn't be cashed out into a working mechanism. The path-integral formulation of quantum mechanics was, in part, Feynman insisting on a version of the theory he could <em>compute with</em> and <em>picture</em>. A simulation that survives contact with its own execution is a stronger epistemic object than a clean diagram that never had to run.</p>
+    <p>The smoke test — the deterministic, network-free harness that drives the whole lifecycle and <em>asserts</em> the eviction log caps, the FIFO forgets, and referenced evictions resurrect — is the same value applied to engineering: you don't get to believe the mechanism works until something independent confirms it does.</p>
+
+    <h2><span class="num">2</span>Simple rules, rich behavior — the aesthetic of mechanism</h2>
+    <p>Feynman opened the <em>Lectures on Physics</em> by asking what single sentence he would preserve if all scientific knowledge were lost. His answer was the atomic hypothesis — the idea that a whole world of complexity unfolds from one short rule. What he was really celebrating is <strong>compression</strong>: a tiny generator producing endless structure.</p>
+    <p>OGrE's intro scene is built on exactly this delight. Three lines —</p>
+    <pre><code>dx/dt = σ(y − x)
+dy/dt = x(ρ − z) − y
+dz/dt = xy − βz</code></pre>
+    <p>— and out of them falls the entire butterfly, never repeating, never escaping. The narration leans on this ("just three short equations… that is the entire rule") because it <em>is</em> the most Feynman-resonant moment in the whole piece. He loved the principle of least action for the same reason: that the sprawling, case-by-case Newtonian bookkeeping collapses into one variational statement. He told the story of being ambushed in high-school physics by Mr. Bader with the least-action principle and never getting over how <em>little</em> you needed to say to capture so much.</p>
+    <p>"Let chaos decide what to remember" is a slogan, but underneath it is a real aesthetic claim Feynman would have recognized: that the right <em>generator</em> is worth more than a thousand hand-tuned rules. Whether OGrE has actually found the right generator is Section 5's problem. But the <em>taste</em> is correct.</p>
+
+    <h2><span class="num">3</span>The strongest connection: the physics of computation</h2>
+    <p>Here is the part that is not a stretch — it is almost literal lineage.</p>
+    <p>In the early 1980s at Caltech, Feynman co-taught a course called <strong>"The Physics of Computation"</strong> with <strong>John Hopfield</strong> and <strong>Carver Mead</strong>. Out of that intellectual neighborhood came two ideas that OGrE is standing directly on top of:</p>
+    <ol>
+      <li><strong>Hopfield's attractor networks (1982):</strong> memory as the <em>stable attractors</em> of a dynamical system. You don't store a memory in a slot; you store it as a basin the system relaxes into. OGrE's decay-and-propagation field is exactly this gesture — densely re-referenced clusters reinforce one another and saturate into stable attracting states that resist decay. That <em>is</em> attractor memory, rediscovered in a knowledge-graph idiom — the central metaphor of the Hopfield program that grew up in Feynman's own corridor.</li>
+      <li><strong>Feynman's "Simulating Physics with Computers" (1982):</strong> the idea that you should let a <em>physical system itself</em> do the computing, because nature is the best simulator of nature. OGrE inverts this charmingly: instead of using computers to simulate physics, it uses a <em>physics</em> — the Lorenz system — as the <strong>computer that makes a governance decision</strong>. A node's connectivity, connascence, and vitality become an initial condition; the attractor integrates it; the wing it lands in <em>is</em> the verdict. A dynamical system pressed into service as a classifier — exactly the sort of thing Feynman found fun.</li>
+    </ol>
+    <p>If you want a one-line provenance for OGrE that would make Feynman lean in: <em>"It's a Hopfield-style attractor memory whose garbage collector is a physical oracle."</em> That sentence is doing honest work, not marketing.</p>
+
+    <h2><span class="num">4</span>Visualization as a way of thinking, not decorating</h2>
+    <p>Feynman diagrams were not illustrations of a calculation done some other way — they <em>were</em> the calculation. The picture was the bookkeeping. Feynman thought <em>through</em> drawings; he reasoned about wobbling plates and spinning disks because the visual was where the physics lived for him.</p>
+    <p>OGrE takes the same stance toward an abstract systems idea. "Temporal decay with edge propagation forming stable attractors, classified by attractor-wing residence" means nothing until you <em>watch</em> a green cluster hold itself together while an isolated red node starves and falls into the eviction log — and then watch a search pull it back. The view, the connascence edge-coloring, the live butterfly: these are the argument made legible. That is squarely Feynman's theory of explanation — if you can't show it, you probably can't claim it.</p>
+    <p>The choice to <em>narrate</em>, to teach while it runs, is of a piece with the man who would rather give a great lecture to undergraduates than almost anything. He believed that if you couldn't explain something to a freshman, you didn't really understand it. OGrE was built to be explained.</p>
+
+    <h2><span class="num">5</span>Where Feynman would push back</h2>
+    <p>This is the section that makes the reflection worth keeping. Feynman's admiration always came with a scalpel, and an honest tribute uses it.</p>
+    <ul>
+      <li><strong>"Which attractor do you mean?"</strong> OGrE uses the word <em>attractor</em> in two distinct senses: (a) the <strong>decay/propagation network's</strong> own emergent stable states — the clusters that self-reinforce — and (b) the <strong>Lorenz system</strong> used as an external classifier. These are not the same dynamical object, and the prose sometimes lets them blur. He'd demand you separate the <em>memory dynamics</em> from the <em>oracle dynamics</em> cleanly, and say precisely how the first feeds the second.</li>
+      <li><strong>"Is the Lorenz mapping a theorem or a costume?"</strong> Mapping (connectivity, connascence, vitality) → (x₀, y₀, z₀) and reading the settled trajectory is <em>evocative</em>, but is it <em>load-bearing</em>? Would a plain threshold on vitality-times-degree classify nodes the same way 95% of the time, with the butterfly adding poetry but no discriminative power? "You must not fool yourself" says: run the ablation. Replace the Lorenz oracle with a trivial scorer and measure whether the chaotic machinery earns its keep. If it does, you have something real. If it doesn't, you have a beautiful demo — and you should <em>say so</em>, which is also fine, but you should know which one you have.</li>
+      <li><strong>"Sensitive dependence cuts both ways."</strong> The romance of chaos is sensitivity to initial conditions. But a <em>classifier</em> usually wants the opposite: stability, so a tiny change in a node's degree doesn't flip KEEP↔EVICT arbitrarily. The REVIEW band and wing-residence gate are partial answers, but he'd ask for the actual sensitivity analysis: how robust is a node's fate to ε-noise in its inputs? Measuring it is the difference between physics and vibes.</li>
+    </ul>
+    <p>None of these are dismissals. They are the questions you ask of work you take seriously. That they're <em>askable</em> — that OGrE is concrete enough to be ablated, perturbed, and falsified — is itself the Feynman seal of approval. Vague ideas can't be attacked. This one can.</p>
+
+    <h2><span class="num">6</span>So — would he have liked it?</h2>
+    <p>The honest answer is: <strong>he would have liked it the way he liked things — by playing with it and then trying to break it.</strong></p>
+    <p>He would have enjoyed the <em>spirit</em> immediately: the build-to-understand ethos, the compression of a memory policy into a generator, the insistence on showing the mechanism, the willingness to let a chaotic system make a decision just to see what happens. The wobbling-plate Feynman — the one who followed a "useless" piece of cafeteria play all the way to a Nobel Prize — would have recognized a kindred motion in someone who put a Lorenz butterfly in charge of a to-do list and meant it.</p>
+    <p>And then he would have grabbed the chalk and said, <em>"Okay, but show me it's not just numerology,"</em> and that conversation — not the praise — is what you'd actually want from him. The praise is cheap; the cross-examination is the gift. This is something concrete enough to deserve the hard version of his attention. That is rarer than it sounds.</p>
+
+    <hr class="rule" />
+
+    <h2>Coda: a to-do worth keeping in the graph</h2>
+    <p>If this reflection were a node, it should be load-bearing — escalated to REVIEW, never auto-evicted — because it points at the experiments that turn taste into result:</p>
+    <ol>
+      <li><strong>Ablate the oracle.</strong> Lorenz-GC vs. a trivial scorer. Measure agreement and the cases where they diverge. Find out if chaos earns its keep.</li>
+      <li><strong>Separate the two attractors</strong> in both the code and the prose. Name them.</li>
+      <li><strong>Perturbation study.</strong> ε-noise on node inputs → distribution of fate-flips. Report the stability, honestly.</li>
+      <li><strong>State the claim at the right strength.</strong> "A working, inspectable model of attractor-governed memory" is already real and defensible. Don't let the romance inflate it, and don't let the rigor-gaps deflate it.</li>
+    </ol>
+    <blockquote>"What I cannot create, I do not understand."<cite>— R. P. Feynman, on his blackboard, 1988</cite></blockquote>
+    <p>You created it. Now do the part he'd respect most: try to prove yourself wrong, and tell everyone exactly what you find.</p>
+
+    <p class="coda">Written with admiration and the deliberate, affectionate skepticism the man himself would have insisted on. Assessment limited to the OGrE artifact; the academic work behind it remains an unread and promising citation.</p>
+
+  </article>
+
+  <footer>
+    <span>© 2026 Dylan McCapes · <span class="mono">dylanmccapes.systems</span></span>
+    <span><a href="https://github.com/dmccapes4/ogre-work-intelligence" target="_blank" rel="noopener">OGrE on GitHub</a> · <a href="index.html">Projects</a></span>
+  </footer>
+
+</div>
+</body>
+</html>
