@@ -4,7 +4,7 @@
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Dylan McCapes — Systems Engineer</title>
-<meta name="description" content="Dylan McCapes — systems engineer building end-to-end AI and mobile systems. Projects: 2ndOpinionMD, FullMetalPacket, CodeScope, ProScope, and an AI-systems consulting curriculum." />
+<meta name="description" content="Dylan McCapes — systems engineer building end-to-end AI and mobile systems. Projects: 2ndOpinionMD, FullMetalPacket, CodeScope, ProScope, OGrE, and an AI-systems consulting curriculum." />
 <style>
   :root{
     --bg:#0b0e14;
@@ -167,7 +167,7 @@
   </header>
 
   <div class="section-head">
-    <h2>Projects <span class="count">/ 5</span></h2>
+    <h2>Projects <span class="count">/ 6</span></h2>
     <button class="toggle-all" id="toggleAll" aria-expanded="false">Expand all</button>
   </div>
 
@@ -266,6 +266,31 @@
         </div>
         <div class="links">
           <a class="btn primary" href="https://github.com/dmccapes4/proscope" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.58 2 12.26c0 4.5 2.87 8.32 6.84 9.67.5.1.68-.22.68-.49 0-.24-.01-.87-.01-1.71-2.78.62-3.37-1.2-3.37-1.2-.46-1.18-1.11-1.5-1.11-1.5-.91-.64.07-.62.07-.62 1 .07 1.53 1.06 1.53 1.06.89 1.56 2.34 1.11 2.91.85.09-.66.35-1.11.63-1.36-2.22-.26-4.55-1.14-4.55-5.07 0-1.12.39-2.03 1.03-2.75-.1-.26-.45-1.3.1-2.7 0 0 .84-.27 2.75 1.05a9.36 9.36 0 0 1 5 0c1.91-1.32 2.75-1.05 2.75-1.05.55 1.4.2 2.44.1 2.7.64.72 1.03 1.63 1.03 2.75 0 3.94-2.34 4.81-4.57 5.06.36.32.68.94.68 1.9 0 1.37-.01 2.47-.01 2.81 0 .27.18.6.69.49A10.02 10.02 0 0 0 22 12.26C22 6.58 17.52 2 12 2Z"/></svg>
+            View on GitHub
+          </a>
+        </div>
+      </div>
+    </details>
+
+    <!-- OGrE -->
+    <details class="card">
+      <summary>
+        <div class="s-main">
+          <div class="s-title"><span class="kind">Graph Memory · Simulation</span><h3>OGrE</h3></div>
+          <p class="s-one">A live simulation of graph-based work intelligence — opportunistic enrichment, 5D-connascence edges, and a Lorenz-attractor garbage collector.</p>
+        </div>
+        <span class="chev" aria-hidden="true"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5"><path d="m6 9 6 6 6-6"/></svg></span>
+      </summary>
+      <div class="body">
+        <p class="highlight">What should a system remember, and what should it let go? OGrE answers with the geometry of chaos — a real-time <strong>PyGame</strong> simulation of a knowledge graph that grows, decays, forgets, and resurrects.</p>
+        <p>Work items are ingested by a <strong>local Ollama agent</strong> (qwen2.5-coder 14B, GPU-tiered to fit 12&nbsp;GB VRAM) that enriches each into concepts and importance. <em>Opportunistic Graph enrichment</em> (OGrE) weaves them together with <strong>5D-connascence edges</strong> — structural, conceptual, temporal, co-occurrence, and co-variance. Vitality decays over time but <strong>propagates along edges</strong>, so densely re-referenced clusters reinforce each other into stable attractors.</p>
+        <p>A <strong>Lorenz-attractor garbage collector</strong> (built on my <span class="mono">provenance-engine</span> package) maps every node into the chaotic system and classifies it by which wing its trajectory settles into — <strong>KEEP / REVIEW / EVICT</strong>. Evictions fall into a 100-item <strong>FIFO log</strong>; an agent searching the past walks the live graph first, then the log, and <strong>resurrects</strong> anything still referenced. The whole lifecycle renders live and records straight to video.</p>
+        <div class="tags">
+          <span class="tag">Python</span><span class="tag">PyGame</span><span class="tag">Ollama (local LLM)</span><span class="tag">Lorenz-attractor GC</span><span class="tag">Knowledge Graph</span><span class="tag">provenance-engine</span>
+        </div>
+        <div class="links">
+          <a class="btn primary" href="https://github.com/dmccapes4/ogre-work-intelligence" target="_blank" rel="noopener">
             <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.58 2 12.26c0 4.5 2.87 8.32 6.84 9.67.5.1.68-.22.68-.49 0-.24-.01-.87-.01-1.71-2.78.62-3.37-1.2-3.37-1.2-.46-1.18-1.11-1.5-1.11-1.5-.91-.64.07-.62.07-.62 1 .07 1.53 1.06 1.53 1.06.89 1.56 2.34 1.11 2.91.85.09-.66.35-1.11.63-1.36-2.22-.26-4.55-1.14-4.55-5.07 0-1.12.39-2.03 1.03-2.75-.1-.26-.45-1.3.1-2.7 0 0 .84-.27 2.75 1.05a9.36 9.36 0 0 1 5 0c1.91-1.32 2.75-1.05 2.75-1.05.55 1.4.2 2.44.1 2.7.64.72 1.03 1.63 1.03 2.75 0 3.94-2.34 4.81-4.57 5.06.36.32.68.94.68 1.9 0 1.37-.01 2.47-.01 2.81 0 .27.18.6.69.49A10.02 10.02 0 0 0 22 12.26C22 6.58 17.52 2 12 2Z"/></svg>
             View on GitHub
           </a>
